@@ -1,9 +1,3 @@
-import { serveFile } from "jsr:@std/http/file-server";
-
-Deno.serve((req: Request) => {
-    return serveFile(req, "./index.html");
-
-
 // MasterHttpRelay exit node for Deno Deploy.
 // Deploy as HTTP endpoint and set PSK to a strong secret.
 
@@ -103,6 +97,4 @@ Deno.serve(async (req: Request): Promise<Response> => {
     const message = err instanceof Error ? err.message : String(err);
     return Response.json({ e: message }, { status: 500 });
   }
-});
-
 });
